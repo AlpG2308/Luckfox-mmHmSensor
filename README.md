@@ -9,7 +9,7 @@ A data driven approach towards conserving resources and taking customer grade to
 
 ### Luckfox Tutorial Approach
 
-Luckfox gives you already a rather easy entry point to get started with the Linux Development which is dependent on:
+Luckfox gives you already a rather easy entry point and is based and the OS you would like:
 
 - SD Flash
 - NAND Flash
@@ -19,20 +19,20 @@ Luckfox gives you already a rather easy entry point to get started with the Linu
 
 For each they provide some commonly used Software or their own SDK.
 
-**But why download 5 different softwares if u can just use linux**
+**But why download 5 different softwares if u can just use linux :) **
 
-Besides the partial firmware you get provided a .txt file. In that they tell you all of sets you need and the order you have to flash the partial image in.
+Besides the partial firmware you get a .txt file provided. In that they tell you all offsets and the order you have to flash the partial image in.
 
-The steps include for flashing:
+Steps to obtain a single firmware image:
 
 1. Download the zip
-2. Find the txt file.
+2. Find the .txt file.
 3. Read the offsets and calculate the total size.
-4. Use dd to create a 0 canvas for your img with a 512 block size and size n
+4. Use dd to create a 0 canvas for your base.img with a 512 block size and a count of n_bytes+512
 5. Write each image file to the empty file in the right order
 6. Trim if needed
 
-Since we now just have a concatenated firmware file mounting will turn out to be a bit annoying:
+Since we now, just have a concatenated firmware file mounting will turn out to be a bit annoying:
 
 1. Use binwalk to map out your .img.
 2. Identify the offset and size of the partition you want to mount. (Example output under firmware layout.txt)
@@ -48,7 +48,7 @@ Afterwards:
 
 #### Working on the Luckfox
 
-Use adb over usb or minicom and Serial Communication. Both work great, with adb a login is not necessary if your usb is in device Mode in Host mode you will need to use the given credentials.
+Use adb over usb or minicom and Serial Communication. Both work great, with adb a login is not necessary, if your usb is in device Mode, in Host mode you will need to use the given credentials.
 
 ## Working with the mm Wavesensor
 
@@ -70,18 +70,17 @@ Approach:
 1. add the user to the dialout group (you wont be able to write commands other wise)
 2. Send debugging Command
 3. Capture data
-4. Create a 2d doppler map "video" in the terminal (crusty_Stream)
+4. Create a 2d doppler map "video" in the terminal with some ascii rendering (crusty_Stream)
 
-The debugging Command sends Chirps for each range bin. That we get 20 time And per range bin(16x) we obtain 4x energy values.
+The debugging Command sends Chirps for each range bin. And we obtain energy values per pin.
 This means the controller is already doing the biggest chunk of the processing including the fft.
 
-I didnt find a way yet to obtain the raw values, but we have some testing pins exposed or I will try to screen for hidden commands that dump the raw data.
-
+The raw values we will need to extract over some other ways I assume.
 But for our starter goal the doppler maps are more than enough.
 
-1. Send your command using pyserial a simple copy pasta and a string is enough.
+1. Send your command using pyserial a simple copy pasta of the Debuggin Mode Command is enough.
 2. Use ´bytes_from_hex´ to create a by string and send it to your Sensor
-3. Capture some data for a given time. That is not yet important but will be important when we try to achieve **sub-nyquist resolution**
+3. Capture some data for a given time. That is not yet important but will be important when we try to achieve **sub-nyquist resolution**.
 4. To get a base functioning prototype we just mean shift our data and look at log changes per frame
 5. Map it to your ascii character set.
 6. Do some terminal pointer handling and loop through the frames
@@ -95,4 +94,4 @@ But for our starter goal the doppler maps are more than enough.
 1. Invariant Formation
 2. Sub Nyquist processing
 3. Comparison to Backward Modelling
-4. Online Streaming and Processing with known, controllable and predictable latency.4. Online Streaming and Processing with known, controllable and predictable latency.4. Online Streaming and Processing with known, controllable and predictable latency.4. Online Streaming and Processing with known, controllable and predictable latency.
+4. Online Streaming and Processing with known, controllable and predictable latency.
