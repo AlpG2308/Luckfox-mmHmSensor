@@ -1,0 +1,24 @@
+
+                                                 /home/alpgthinky/Desktop/LuckFox/Source/tools/firmware/../../Luckfox_Pico_MicroSD_250429/luckfox_sd.img
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DECIMAL                            HEXADECIMAL                        DESCRIPTION
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+153328                             0x256F0                            CRC32 polynomial table, little endian
+214344                             0x34548                            Device tree blob (DTB), version: 17, CPU ID: 0, total size: 6714 bytes
+557056                             0x88000                            Device tree blob (DTB), version: 17, CPU ID: 0, total size: 1536 bytes
+561152                             0x89000                            LZMA compressed data, properties: 0x5D, dictionary size: 67108864 bytes, compressed size: 181469 bytes, uncompressed size: -1 
+                                                                      bytes
+742912                             0xB5600                            Device tree blob (DTB), version: 17, CPU ID: 0, total size: 9670 bytes
+1081344                            0x108000                           Device tree blob (DTB), version: 17, CPU ID: 0, total size: 1536 bytes
+1083392                            0x108800                           Device tree blob (DTB), version: 17, CPU ID: 0, total size: 37040 bytes
+1131041                            0x114221                           XZ compressed data, total size: 3025644 bytes
+4158976                            0x3F7600                           Device tree blob (DTB), version: 17, CPU ID: 0, total size: 37040 bytes
+34635776                           0x2108000                          EXT filesystem for Linux, inodes: 8192, block size: 4096, block count: 2, free blocks: 485, reserved blocks: 9716, total size: 
+                                                                      39796736 bytes
+571506688                          0x22108000                         EXT filesystem for Linux, inodes: 4096, block size: 1024, block count: 525, free blocks: 487, reserved blocks: 9765, total size: 
+                                                                      9999360 bytes
+839942144                          0x32108000                         EXT filesystem for Linux, inodes: 16384, block size: 4096, block count: 920, free blocks: 1920, reserved blocks: 38408, total 
+                                                                      size: 157319168 bytes
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Analyzed 1 file for 85 file signatures (187 magic patterns) in 5.1 seconds
